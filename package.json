@@ -1,0 +1,61 @@
+{
+  "name": "n8n-nodes-smsport",
+  "version": "1.0.3",
+  "description": "n8n community node for SMSPort - Enterprise WhatsApp Cloud API platform",
+  "keywords": [
+    "n8n-community-node-package",
+    "smsport",
+    "whatsapp",
+    "whatsapp cloud api",
+    "meta whatsapp",
+    "messaging",
+    "automation",
+    "crm"
+  ],
+  "license": "MIT",
+  "homepage": "https://smsport.in",
+  "author": {
+    "name": "SMSPort",
+    "email": "support@smsport.in",
+    "url": "https://smsport.in"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smsport-in/n8n-nodes-smsport.git"
+  },
+  "bugs": {
+    "url": "https://smsport.in/support"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.js",
+    "dev": "tsc --watch",
+    "test": "node test/smoke.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/SmsPortApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/SmsPort/SmsPort.node.js",
+      "dist/nodes/SmsPortTrigger/SmsPortTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "n8n-workflow": "^2.16.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
